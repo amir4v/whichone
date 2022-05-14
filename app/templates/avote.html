@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row" style="text-align: center; direction: rtl; font-size: 5em; color: white; background-color: teal; padding: 3%; border-radius: 10px;">
+    {% if mesh %}
+        <h1>
+            شما تمام مقایسه ها را انجام داده اید!
+        </h1>
+
+        <a href="/avote-result/{{avote}}" style="text-decoration: none; color: white; font-size: large; border: 1px solid gray; border-radius: 5px; padding: 1%; margin-top: 5%;">
+            دیدن نتیجه تا این لحظه
+        </a>
+    {% else %}
+        <div class="col float-end">
+            <a href="/rather/{{avote}}/{{A.id}}/{{B.id}}" style="color: white; text-decoration: none; border: 1px solid gray; border-radius: 5px; padding: 3%;">{{ A }}</a>
+        </div>
+        <div class="col float-start">
+            <a href="/rather/{{avote}}/{{B.id}}/{{A.id}}" style="color: white; text-decoration: none; border: 1px solid gray; border-radius: 5px; padding: 3%;">{{ B }}</a>
+        </div>
+
+        <br>
+        <a href="/avote-result/{{avote}}" style="text-decoration: none; color: white; font-size: large; border: 1px solid gray; border-radius: 5px; padding: 1%; margin-top: 5%;">
+            دیدن نتیجه تا این لحظه
+        </a>
+    {% endif %}
+</div>
+{% endblock content %}

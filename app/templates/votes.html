@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<h1 style="text-align: center; direction: rtl; background-color: teal; padding: 5%; border-radius: 10px;">
+    {% for v in votes %}
+        <a href="/avote/{{v.id}}" style="text-decoration: none; color: white;">
+            <p style="border: 1px solid gray; border-radius: 5px; padding: 1%;">{{ v }}</p>
+            <br>
+        </a>
+    {% endfor %}
+</h1>
+{% endblock content %}

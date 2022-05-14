@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<a href="/avote/{{avote.id}}" style="text-decoration: none;">
+    <h1 style="text-align: center; direction: rtl; color: white; background-color: rgb(170, 170, 170); padding: 1%; border-radius: 10px;">
+        نتیجه، 
+        {{ avote }}
+    </h1>
+</a>
+<br>
+<br>
+<h1 style="text-align: center; direction: rtl; color: white; background-color: teal; padding: 5%; border-radius: 10px;">
+    <ol>
+        {% for r in result %}
+        <li>
+            {{ r }}
+        </li>
+        <br>
+        <br>
+        {% endfor %}
+    </ol>
+</h1>
+{% endblock content %}
